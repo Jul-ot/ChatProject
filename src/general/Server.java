@@ -9,8 +9,6 @@ import java.util.List;
 
 public class Server {
 
-	private List<String> clientsList = new ArrayList<String>();
-
 	public static void main(String[] args) {
 		try {
 			// registry creation
@@ -30,13 +28,5 @@ public class Server {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-
-	public List<String> getClientsList() {
-		return clientsList;
-	}
-
-	public void setClientsList(List<String> clientsList) {
-		this.clientsList = clientsList;
 	}
 }

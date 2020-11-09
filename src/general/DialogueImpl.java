@@ -2,12 +2,21 @@ package general;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class DialogueImpl extends UnicastRemoteObject implements Dialogue {
+	
+	private List<String> clientsList;
+	private Map<String, List<String>> messages;
 	
 	protected DialogueImpl() throws RemoteException {
 		super();
 		// TODO Auto-generated constructor stub
+		this.clientsList = new ArrayList<String>();
+		this.messages = new HashMap<String, List<String>>();
 	}
 	
 	@Override
@@ -18,34 +27,62 @@ public class DialogueImpl extends UnicastRemoteObject implements Dialogue {
 
 	@Override
 	public void connect(String pseudo) throws RemoteException {
-		// TODO Auto-generated method stub
-		
+		if (clientsList.contains(pseudo)) {
+			System.out.println("This pseudo already exists !");
+		} else {
+			this.clientsList.add(pseudo);
+			System.out.println("You've been connected");
+		}
 	}
 
 	@Override
 	public void disconnect(String pseudo) throws RemoteException {
 		// TODO Auto-generated method stub
-		
+		if (clientsList.contains(pseudo)) {
+			this.clientsList.remove(pseudo);
+			System.out.println("You've been disconnected");
+		} else {
+			System.out.println("This pseudo doesn't exist !");
+		}
 	}
 
 	@Override
-	public String[] getClients() throws RemoteException {
+	public List<String> getClients() throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return clientsList;
 	}
 
 	@Override
 	public void sendMessage(String from, String to, String message) throws RemoteException {
 		// TODO Auto-generated method stub
-		String messageToSend = "Message from " + from + " to " + to + " : " + message;
-		System.out.println(messageToSend);
+		if (clientsList.contains(from)) {
+			if (clientsList.contains(from)) {
+				String messageToSend = from + " : " + message;
+				if (messages.get(to) == null) {
+					List<String> messageList = new ArrayList<String>();
+					messageList.add(messageToSend);
+					messages.put(to, messageList);
+					System.out.println(messageList);
+				} else {
+					List<String> recipierMessages = messages.get(to);
+					System.out.println("Messages of recipier : " + recipierMessages);
+					recipierMessages.add(messageToSend);
+					messages.put(to, recipierMessages);
+					System.out.println(messageToSend);
+				}
+
+			} else {
+				System.out.println("The recipier pseudo doesn't exist !");
+			}
+		} else {
+			System.out.println("The sender pseudo doesn't exist !");
+		}
 	}
 
 	@Override
-	public String[] getMessages(String pseudo) throws RemoteException {
+	public List<String> getMessages(String pseudo) throws RemoteException {
 		// TODO Auto-generated method stub
-		return null;
+		return messages.get(pseudo);
 	}
-	//*/
 
 }
