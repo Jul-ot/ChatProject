@@ -3,13 +3,17 @@ package general;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class DialogueImpl extends UnicastRemoteObject implements Dialogue {
-	
 	ArrayList<String> clientList;
+	HashMap<String, ArrayList<String>> mapMessages;
 	
 	protected DialogueImpl() throws RemoteException {
 		super();
+		clientList = new ArrayList<String>();
+		mapMessages = new HashMap<String, ArrayList<String>>();
+		
 		
 		
 		// TODO Auto-generated constructor stub
@@ -37,9 +41,28 @@ public class DialogueImpl extends UnicastRemoteObject implements Dialogue {
 	}
 
 	@Override
-	public void sendMessage(String from, String to, String message) {
+	public void sendMessage(String from, String to, String message) throws RemoteException {
+		// TODO Auto-generated method stub
+		if (!mapMessages.containsKey(to)) {
+			ArrayList<String> messageList = new ArrayList<String>();
+			messageList.add(message);
+			mapMessages.put(to, messageList);
+			
+		}
+		else {
+			ArrayList<String> messageList = mapMessages.get(to);
+			messageList.add(message);
+			mapMessages.replace(to, messageList);
+		}
+		System.out.println(from + ":" + message);
+		
+	}
+
+	@Override
+	public ArrayList<String> getMessages(String pseudo) throws RemoteException {
 		// TODO Auto-generated method stub
 		
+		return mapMessages.get(pseudo);
 	}
 	
 	

@@ -20,7 +20,7 @@ public class Server {
 			System.out.println(myComponent.getRef().remoteToString());
 			
 			//publication of component reference in the registry
-			Naming.rebind("Hello", myComponent);
+			Naming.rebind("Dialogue", myComponent);
 			
 			System.out.println("Serveur actif");
 			
