@@ -12,7 +12,7 @@ public class Server {
 	public static void main(String[] args) {
 		try {
 			// registry creation
-			LocateRegistry.createRegistry(10000);
+			LocateRegistry.createRegistry(1099);
 			
 			// component instanciation and implicit activation
 			DialogueImpl myComponent = new DialogueImpl();
