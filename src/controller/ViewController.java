@@ -11,35 +11,48 @@ import javafx.stage.Stage;
 public class ViewController extends Application {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		launch(args);
 	}
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
+
 		try {
-            BorderPane root = new BorderPane();
+			BorderPane root = new BorderPane();
 
-            FXMLLoader escrimLoader = new FXMLLoader(getClass().getResource("/view/ESCRIM.fxml"));
-            root.setCenter(escrimLoader.load());
+			FXMLLoader chatApplicationLoader = new FXMLLoader(getClass().getResource("/view/HomeScreen.fxml"));
+			root.setCenter(chatApplicationLoader.load());
 
-            FXMLLoader menuLoader = new FXMLLoader(getClass().getResource("/view/SideMenu.fxml"));
-            root.setLeft(menuLoader.load());
+			/*
+			 * FXMLLoader menuLoader = new
+			 * FXMLLoader(getClass().getResource("/view/SideMenu.fxml"));
+			 * root.setLeft(menuLoader.load());
+			 */
 
-            Scene scene = new Scene(root);
+			Scene scene = new Scene(root);
 
-            primaryStage.setScene(scene);
-            primaryStage.setTitle("ESCRIM Management");
-            primaryStage.setHeight(700);
-            primaryStage.setWidth(1300);
-            primaryStage.show();
-            primaryStage.centerOnScreen();
+			primaryStage.setScene(scene);
+			primaryStage.setTitle("Chat Project");
+			primaryStage.setHeight(700);
+			primaryStage.setWidth(1300);
+			primaryStage.show();
+			primaryStage.centerOnScreen();
 
-        } catch (IOException e) {
-            System.out.println("Erreur lors du chargement de la scène : " + e.getMessage());
-        }
-		
+		} catch (IOException e) {
+			System.out.println("Erreur lors du chargement de la scène : \n" + e.getMessage());
+		}
+
+		/*
+		 * BorderPane root = new BorderPane();
+		 * 
+		 * Scene scene = new Scene(root);
+		 * 
+		 * primaryStage.setScene(scene); primaryStage.setTitle("Chat Project");
+		 * primaryStage.setHeight(700); primaryStage.setWidth(1300);
+		 * primaryStage.show(); primaryStage.centerOnScreen();
+		 */
+
 	}
 
 }

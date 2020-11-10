@@ -7,6 +7,13 @@ import java.rmi.RemoteException;
 import java.util.Scanner;
 
 public class Client1 {
+	
+	private String myPseudo = "";
+	
+	public Client1(String myPseudo) {
+		super();
+		this.myPseudo = myPseudo;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -28,7 +35,16 @@ public class Client1 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
+
+	public String getMyPseudo() {
+		return myPseudo;
+	}
+
+	public void setMyPseudo(String myPseudo) {
+		this.myPseudo = myPseudo;
+	}
+	
+	
 
 }

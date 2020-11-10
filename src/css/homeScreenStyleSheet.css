@@ -1,0 +1,69 @@
+/*
+ * Copyright (c) 2020. Ce fichier a été écrit par Jules WAROT.
+ */
+
+.root {
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: #D9CB04;
+    -fx-background-color: #010326;
+}
+
+#rootHBox {
+	-fx-faint-focus-color: transparent;
+    -fx-focus-color: #D9CB04;
+    -fx-background-color: #010326;
+}
+
+
+/* Labels style */
+
+.label {
+    -fx-text-fill: white;
+    -fx-font-family: "Avenir Next Regular";
+}
+
+.label-subtitle {
+    -fx-text-fill: #81A18A;
+    -fx-font-family: "Avenir Next";
+    -fx-font-size: 20.0;
+}
+
+.label-static {
+    -fx-font-family: "Avenir Next";
+}
+
+
+/* Buttons style */
+
+.button {
+    -fx-background-radius: 26;
+    -fx-background-color: #010326;
+    -fx-border-color: #D9CB04;
+    -fx-border-width: 2;
+    -fx-border-radius:26;
+    -fx-font-size: 12.0;
+    -fx-font-family: "Avenir Next Bold";
+    -fx-text-fill: #D9CB04;
+}
+
+.button:hover {
+    -fx-background-radius: 26;
+    -fx-background-color: #D9CB04;
+    -fx-border-color: #D9CB04;
+    -fx-border-width: 2;
+    -fx-font-size: 12.0;
+    -fx-font-family: "Avenir Next Bold";
+    -fx-text-fill: #010326;
+    -fx-cursor: hand;
+}
+
+.button:focus {
+	-fx-background-radius: 26;
+    -fx-background-color: #D9CB04;
+    -fx-border-color: #010326;
+    -fx-border-width: 2;
+    -fx-font-size: 12.0;
+    -fx-font-family: "Avenir Next Bold";
+    -fx-text-fill: #010326;
+    -fx-cursor: hand;
+}
