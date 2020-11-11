@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class Client2 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Dialogue myComponent;
 		try {
 			myComponent = (Dialogue) Naming.lookup("rmi://127.0.0.1:10000/Dialogue");
@@ -27,7 +26,6 @@ public class Client2 {
 			myComponent.disconnect("Julien");
 			System.out.println(myComponent.getClients());
 		} catch (MalformedURLException | RemoteException | NotBoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

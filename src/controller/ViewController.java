@@ -16,7 +16,6 @@ public class ViewController extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		// TODO Auto-generated method stub
 
 		try {
 			BorderPane root = new BorderPane();
@@ -25,7 +24,7 @@ public class ViewController extends Application {
 			root.setCenter(chatApplicationLoader.load());
 
 			/*
-			 * FXMLLoader menuLoader = new
+			 * FXMLLoader menuLoader = new FXMLLoader(getClass().getResource("/view/SideMenu.fxml"));
 			 * FXMLLoader(getClass().getResource("/view/SideMenu.fxml"));
 			 * root.setLeft(menuLoader.load());
 			 */
@@ -33,14 +32,14 @@ public class ViewController extends Application {
 			Scene scene = new Scene(root);
 
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Chat Project");
+			primaryStage.setTitle("ChatRoom Project");
 			primaryStage.setHeight(700);
 			primaryStage.setWidth(1300);
 			primaryStage.show();
 			primaryStage.centerOnScreen();
 
 		} catch (IOException e) {
-			System.out.println("Erreur lors du chargement de la scène : \n" + e.getMessage());
+			System.out.println("Error while loading scene : \n" + e.getMessage());
 		}
 
 		/*

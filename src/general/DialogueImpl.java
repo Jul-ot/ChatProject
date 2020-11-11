@@ -14,14 +14,12 @@ public class DialogueImpl extends UnicastRemoteObject implements Dialogue {
 	
 	protected DialogueImpl() throws RemoteException {
 		super();
-		// TODO Auto-generated constructor stub
 		this.clientsList = new ArrayList<String>();
 		this.messages = new HashMap<String, List<String>>();
 	}
 	
 	@Override
 	public String sayHello(String message) throws RemoteException {
-		// TODO Auto-generated method stub
 		return message;
 	}
 
@@ -37,7 +35,6 @@ public class DialogueImpl extends UnicastRemoteObject implements Dialogue {
 
 	@Override
 	public void disconnect(String pseudo) throws RemoteException {
-		// TODO Auto-generated method stub
 		if (clientsList.contains(pseudo)) {
 			this.clientsList.remove(pseudo);
 			System.out.println("You've been disconnected");
@@ -48,13 +45,11 @@ public class DialogueImpl extends UnicastRemoteObject implements Dialogue {
 
 	@Override
 	public List<String> getClients() throws RemoteException {
-		// TODO Auto-generated method stub
 		return clientsList;
 	}
 
 	@Override
 	public void sendMessage(String from, String to, String message) throws RemoteException {
-		// TODO Auto-generated method stub
 		if (clientsList.contains(from)) {
 			if (clientsList.contains(from)) {
 				String messageToSend = from + " : " + message;
@@ -81,7 +76,6 @@ public class DialogueImpl extends UnicastRemoteObject implements Dialogue {
 
 	@Override
 	public List<String> getMessages(String pseudo) throws RemoteException {
-		// TODO Auto-generated method stub
 		return messages.get(pseudo);
 	}
 

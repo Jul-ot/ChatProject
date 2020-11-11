@@ -25,7 +25,6 @@ public class Server {
 			System.out.println("Serveur actif");
 
 		} catch (RemoteException | MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
