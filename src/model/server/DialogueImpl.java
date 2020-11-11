@@ -1,4 +1,6 @@
-package general;
+package model.server;
+
+import model.client.Dialogue;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

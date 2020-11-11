@@ -1,4 +1,4 @@
-package general;
+package model.client;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;

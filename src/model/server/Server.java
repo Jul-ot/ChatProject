@@ -1,11 +1,9 @@
-package general;
+package model.server;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Server {
 
