@@ -2,16 +2,32 @@ package model.server;
 
 import model.client.Connection;
 import model.client.Emitter;
+import model.client.ReceiverImpl;
+import model.client.User;
 
-public class ConnectionImpl implements Connection {
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
-    @Override
-    public Emitter connect(String nickname, Receiver rcv) {
-        return null;
+public class ConnectionImpl extends UnicastRemoteObject implements Connection {
+
+    protected ConnectionImpl() throws RemoteException {
+        super();
     }
 
     @Override
-    public void disconnect(String nickname) {
+    public Emitter connect(User user, Receiver rcv) {
+        Emitter emitter = null;
+        Receiver receiver = null;
+        try {
+            emitter = new EmitterImpl();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return emitter;
+    }
+
+    @Override
+    public void disconnect(User user) {
 
     }
 }

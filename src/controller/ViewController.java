@@ -15,7 +15,7 @@ public class ViewController extends Application {
 	}
 
 	@Override
-	public void start(Stage primaryStage) throws Exception {
+	public void start(Stage primaryStage) {
 
 		try {
 			BorderPane root = new BorderPane();
@@ -23,7 +23,8 @@ public class ViewController extends Application {
 			FXMLLoader chatApplicationLoader = new FXMLLoader(getClass().getResource("/view/HomeScreen.fxml"));
 			root.setCenter(chatApplicationLoader.load());
 
-			/*
+			/* ############################ Code for side menu creation ############################
+
 			 * FXMLLoader menuLoader = new FXMLLoader(getClass().getResource("/view/SideMenu.fxml"));
 			 * FXMLLoader(getClass().getResource("/view/SideMenu.fxml"));
 			 * root.setLeft(menuLoader.load());
@@ -41,16 +42,6 @@ public class ViewController extends Application {
 		} catch (IOException e) {
 			System.out.println("Error while loading scene : \n" + e.getMessage());
 		}
-
-		/*
-		 * BorderPane root = new BorderPane();
-		 * 
-		 * Scene scene = new Scene(root);
-		 * 
-		 * primaryStage.setScene(scene); primaryStage.setTitle("Chat Project");
-		 * primaryStage.setHeight(700); primaryStage.setWidth(1300);
-		 * primaryStage.show(); primaryStage.centerOnScreen();
-		 */
 
 	}
 

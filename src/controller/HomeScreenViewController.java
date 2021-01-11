@@ -77,15 +77,16 @@ public class HomeScreenViewController implements Initializable {
             e.printStackTrace();
         }
 
-        /*############ Images in buttons ######################
+        /*###################### Images in buttons ######################
          *
          * Image imgPower = new Image("utils.images/power.png");
-         * System.out.println("YOOOOOOOOOOOOOOOOOOOOOOOOOO"); ImageView viewPower = new
-         * ImageView(imgPower); viewPower.setFitHeight(80);
+         * ImageView viewPower = new ImageView(imgPower);
+         * viewPower.setFitHeight(80);
          * viewPower.setPreserveRatio(true);
          *
-         * Image imgRefresh = new Image("utils.images/refresh.png"); ImageView
-         * viewRefresh = new ImageView(imgRefresh); viewRefresh.setFitHeight(80);
+         * Image imgRefresh = new Image("utils.images/refresh.png");
+         * ImageView viewRefresh = new ImageView(imgRefresh);
+         * viewRefresh.setFitHeight(80);
          * viewRefresh.setPreserveRatio(true);
          *
          * connectionButton.setGraphic(viewPower);

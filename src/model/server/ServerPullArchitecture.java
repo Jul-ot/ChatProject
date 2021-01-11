@@ -5,7 +5,7 @@ import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 
-public class Server {
+public class ServerPullArchitecture {
 
 	public static void main(String[] args) {
 		try {
